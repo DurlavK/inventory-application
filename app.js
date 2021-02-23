@@ -5,8 +5,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
 
-var dev_db_url = 'mongodb+srv://durlavk:durlavk@cluster0.zzzbk.mongodb.net/inventory?retryWrites=true&w=majority'
-var mongoDB = process.env.MONGODB_URI || dev_db_url;
+require('dotenv').config();
+
+var mongoDB = process.env.MONGODB_URI;
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
